@@ -41,7 +41,6 @@ class Counter extends Component {
         <button onClick={() => this.props.onStoreResult(this.props.ctr)}>Result</button>
         <ul>
           {this.props.results.map((strResult) => {
-            console.log('strResult', strResult)
             return <li key={strResult.id} onClick={() => this.props.onDeleteResult(strResult.id)}>{strResult.value}</li>
           })}
         </ul>
@@ -51,7 +50,6 @@ class Counter extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log('state', state)
   return {
     ctr: state.counter.counter,
     results: state.results.results
